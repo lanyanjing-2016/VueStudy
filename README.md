@@ -1,6 +1,7 @@
 ##VueStudy1---第一篇
 ###Vue.js介绍
 > Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组件化的思想构建的
+>
 ###使用Vue的过程就是定义MVVM各个组成部分的过程的过程。
 >1.定义View
 >
