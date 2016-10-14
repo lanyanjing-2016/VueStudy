@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue第一步</title>
+    <script src="JS/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<!--
+1.view即是html(dome)层
+model即是javascript（数据层）
+ViewModel是用来绑定二者
+
+2.使用Vue的过程就是定义MVVM各个组成部分的过程的过程。
+定义View
+定义Model
+创建一个Vue实例或”ViewModel”，它用于连接View和Model
+-->
+<script>
+    //这是我们的Model
+    var exampleData={
+        message:"hello world!"
+    }
+    //创建一个vue的实例，viewModel层来链接view和model层
+    new Vue({
+        el:"#app",
+        data:exampleData
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="JS/vue.js"></script>
+</head>
+<body>
+<!--
+MVVM模式本身是实现双向绑定的，在Vue.js中可以使用v-modle指令在表单元素上创建双向数据绑定
+-->
+<div id="app">
+    {{message}}
+    <input type="text" v-model="message"/>
+</div>
+<script>
+    //定义model数据层
+    var explemeDate={
+        message:"hello world!"
+    }
+    //定义viewModel来链接view和model
+    new Vue({
+        el:"#app",
+        data:explemeDate
+    })
+</script>
+</body>
+</html>

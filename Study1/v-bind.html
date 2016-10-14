@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-bind绑定指令</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+    <script src="JS/vue.js"></script>
+    <style>
+        .pagination>li>.active{background: #31b0d5;color:white;}
+    </style>
+</head>
+<body>
+<!--
+v-bind指令可以在其名称后面带一个参数，中间放一个冒号隔开，这个参数通常是HTML元素的特性（attribute），例如：v-bind:class
+
+下面这段代码构建了一个简单的分页条，v-bind指令作用于元素的class特性上。
+这个指令包含一个表达式，表达式的含义是：高亮当前页。
+
+注意v-for="n in pageCount"这行代码，pageCount是一个整数，遍历时n从0开始，然后遍历到pageCount –1结束。
+-->
+<div id="app">
+    <ul class="pagination">
+        <li v-for="n in pageCount">
+            <a href="javascripit:void(0)" v-bind:class="activeNumber === n +3 ? 'active' : ''">{{ n + 1 }}</a>
+        </li>
+    </ul>
+</div>
+<script>
+   //定义viewModel来链接view和model
+    new Vue({
+        el:"#app",
+        data: {
+            activeNumber:4,
+            pageCount: 10
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>v-if指令</title>
+    <script src="JS/vue.js"></script>
+    <style>
+        h2{color:red}
+    </style>
+</head>
+<body>
+<!--
+v-if是条件渲染指令，它根据表达式的真假来删除和插入元素，它的基本语法如下：
+v-if="<em>expression</em>"
+
+v-if值为false的元素没有渲染到HTML
+-->
+<div id="app">
+    <h1>你好！欢迎光临</h1>
+    <h1>你的年龄：<h2>{{age}}</h2></h1>
+    <h1 v-if="age>=18">你已经成年！</h1>
+    <h1 v-if="age<18">你还是未成年不能进入！</h1>
+    <h1 v-if="age>=18">请输入姓名进行登记</h1>
+    <h2 v-if="age>=18">您的姓名：{{name}}</h2>
+</div>
+<script>
+   //定义viewModel来链接view和model
+    new Vue({
+        el:"#app",
+        data: {
+            age:28,
+            name: 'keepfool'
+        }
+    })
+</script>
+</body>
+</html>
