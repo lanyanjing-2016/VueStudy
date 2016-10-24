@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="JS/vue.js"></script>
+    <title>vue-组件</title>
+</head>
+<body>
+<!--
+组件语法糖
+使用Vue.component()直接创建和注册组件
+Vue.component()的第1个参数是标签名称，第2个参数是一个选项对象，使用选项对象的template属性定义组件模板。
+使用这种方式，Vue在背后会自动地调用Vue.extend()
+-->
+<div id="app">
+    <my-component></my-component>
+    <second-component></second-component>
+</div>
+<script>
+//     Vue.component("my-component",{
+//         template:'<div>第一个vue组件</div>'
+//     })
+    var app=new Vue({
+        el:"#app",
+        components:{
+           "my-component":{
+               template:'<div>第一个vue组件</div>'
+           },
+            "second-component":{
+                template:'<div>second组件</div>'
+            }
+        }
+    })
+</script>
+</body>
+</html>

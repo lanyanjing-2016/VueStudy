@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="JS/vue.js"></script>
+    <title>vue-组件</title>
+</head>
+<body>
+<!--
+组件可以扩展HTML元素，封装可重用的HTML代码，我们可以将组件看作自定义的HTML元素。
+使用步骤：1、创建组件构造器 2，注册组件 3、使用组件
+1. Vue.extend()是Vue构造器的扩展，调用Vue.extend()创建的是一个组件构造器。
+2. Vue.extend()构造器有一个选项对象，选项对象的template属性用于定义组件要渲染的HTML。
+3. 使用Vue.component()注册组件时，需要提供2个参数，第1个参数时组件的标签，第2个参数是组件构造器。
+调用Vue.component()注册组件时，组件的注册是全局的，这意味着该组件可以在任意Vue示例下使用。
+-->
+<div id="app">
+    <!-- 3. #app是Vue实例挂载的元素，应该在挂载元素范围内使用组件-->
+    <my-component></my-component>
+</div>
+<script>
+     //1.创建一个组件构造器
+     var mycomponent=Vue.extend({
+         template:'<div>第一个vue组件</div>'
+     })
+      //2.全局注册组件
+     //Vue.component("my-component",mycomponent)
+     var app=new Vue({
+        el:"#app",
+        //局部注册组件
+        components:{
+            'my-component': mycomponent
+        }
+    })
+
+
+</script>
+</body>
+</html>

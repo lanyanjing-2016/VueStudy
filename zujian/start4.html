@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="JS/vue.js"></script>
+    <title>vue-组件</title>
+</head>
+<body>
+<!--
+使用script或template标签
+template选项现在不再是HTML元素，而是一个id，Vue.js根据这个id查找对应的元素，然后将这个元素内的HTML作为模板进行编译。
+type指定为text/x-template，意在告诉浏览器这不是一段js脚本，浏览器在解析HTML文档时会忽略<script>标签内定义的内容。
+-->
+<div id="app">
+    <my-component></my-component>
+    <temp-component></temp-component>
+</div>
+<script type="text/x-template" id="myComponent">
+    <div>This is a component!</div>
+    <p>p列表</p>
+</script>
+
+<template id="tempComponent">
+    <div>template标签绑定，不需要指定type类型</div>
+</template>
+<script>
+    var app = new Vue({
+            el: "#app",
+            components: {
+              "my-component": {
+                template: '#myComponent'
+              },
+            "temp-component":{
+                template: '#tempComponent'
+               }
+            }
+    });
+</script>
+</body>
+</html>
